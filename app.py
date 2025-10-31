@@ -1,7 +1,6 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain.chains import LLMChain
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import LLMChain, ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 from langchain_community.document_loaders import PyPDFLoader
@@ -145,5 +144,6 @@ if st.button("End Conversation"):
     st.balloons()
     st.success("🎉 Thank you for using TalentScout! We’ll get back to you with next steps.")
     st.session_state.clear()
+
 
 
